@@ -1,77 +1,64 @@
 # Module: MMM-RandomYouTubePlayer
 
-The `MMM-RandomYouTubePlayer` module is third party modules of the MagicMirror. This module loads a YouTube player and a specified playlist and will randomize the videos.
+The MMM-RandomYouTubePlayer module is a 3rd party module of the MagicMirror. 
+This module loads a YouTube player and a specified playlist and will randomize the videos.
 
 ## Using the module
 
-To use this module, add it to the modules array in the `config/config.js` file:
-
-```javascript
+To use this module, add it to the modules array in the 'config/config.js' file:
+```
 modules: [
-		{
-config: {
-	playlistId: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
-        height: 480,
-        width: 720,
-        autoplay: true,
-        disablekb: true,
-        enablejsapi: true,
-        color: "red",
-        fs: false,
-        setPlaybackRate: 1, 
-        setVolume: "100%",
-        cc_load_policy: true,
-        list: "playlist", 
-        controls: false,
-        showinfo: false, 
-        rel: false, 
-        modestbranding: true,
-        iv_load_policy: true,
-        loop: true,
-},
+	{
+	module: "MMM-RandomYoutubePlayer", 
+	position: "top_center",	      // This can be any of the regions...
+	config: {
+	    playlistId: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",     // See Configuration Options below...
+            height: 480,
+            width: 720,
+	    }
+	}
 ]
 ```
+	
+Optional parameters: (defaults for the player as is. change per your needs...)
 
-## Configuration options
+autoplay: true,
+disablekb: true,
+enablejsapi: true,
+color: "red",
+fs: false, 
+volume: "100%",
+cc_load_policy: true,
+controls: false,
+showinfo: false, 
+rel: false, 
+modestbranding: true,
+loop: true,
 
-The following properties can be configured:
+## Configuration Options...
+The following properties NEED to be configured:
 
-<table width="100%">
-	<!-- why, markdown... -->
-	<thead>
-		<tr>
-			<th>Option</th>
-			<th width="100%">Description</th>
-		</tr>
-	<thead>
-	<tbody>
-		<tr>
-			<td><code>fileUrl</code></td>
-			<td>File url.<br>
-				<br><b>Possible values:</b> Logo link form internet or path to your local files relative to MagicMirror directory
-				<br><b>Default value:</b> <i>'modules/MMM-SimpleLogo/public/logo.png'</i>
-			</td>
-		</tr>
-		<tr>
-			<td><code>width</code></td>
-			<td>Set width of your logo, height is auto.<br>
-				<br><b>Possible values:</b> <code>'300px'</code> or <code>'50%'</code>
-				<br><b>Default value:</b> <code>'200px'</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>position</code></td>
-			<td>Horizontal position on current container<br>
-				<br><b>Possible values:</b> <code>left</code>, <code>center</code>, or <code>right</code>
-				<br><b>Default value:</b> <code>left</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>refreshInterval</code></td>
-			<td>Refresh/refetch image file between interval. Only use this if your image url return different image after some interval of time, even the <code>fileUrl</code> is not changed. See this case #2, awesome project by @ElYoM <br>
-				<br><b>Possible values:</b> <code>1000</code>, <code>2000</code>, or <code>10000</code>
-				<br><b>Default value:</b> <code>0</code> (disabled)
-			</td>
-		</tr>
-	</tbody>
-</table>
+| Config                | Description
+| --------------------- | ---------------------------------------------------------------------
+| playlist_ID: " "      | Youtube playlist id to display. You can get it from youtube url <br> **Example:** https://www.youtube.com/playlist?list=PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW <br>**playlist id:** PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW (playlist always starts with PL)
+| width: 480            | YT player width <br> **size in pixels per your need**
+| height: 700           | YT player height <br> **size in pixels per your need**
+
+## Optional Configuration Options...
+The following properties CAN be configured:
+
+| Option                | Description
+| -----------------     | ---------------------------------------------------------------------
+| autoplay: true        | Autoplay video when it loaded <br> **true OR false**
+| volume: true:         |  <br> **true OR false**
+| color: "red"          | Player's video progress bar - color can only be "red" or "white <br> **red or white**
+| controls: true        | Show youtube video controls bar <br> **true OR false**
+| enablejsapi: true     |  <br> **true OR false**
+| disablekb:            | Disables keyboard control <br> **true OR false**
+| fs: false             | Displays the fullscreen button in player <br> **true OR false**
+| loop: true            | Auto-play video again <br> **true OR false**
+| cc_load_policy: true  | Displays captions if available for the video playing <br> **true OR false**
+| modestbranding: false | Prevent the Youtube logo displaying in the controlbar. <br> **true OR false**
+| rel: true             | Show related video at the end of video <br> **true OR false**
+| showinfo: true        | Show video title and uploader <br> **true OR false**
+
