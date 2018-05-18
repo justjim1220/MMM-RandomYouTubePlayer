@@ -1,6 +1,6 @@
 # Module: MMM-RandomYouTubePlayer...
 
-The MMM-RandomYouTubePlayer module is a 3rd party module of the <a href>https://github.com/MichMich/MagicMirror/tree/developMagicMirror>MagicMirror</a>
+The MMM-RandomYouTubePlayer module is a 3rd party module of the <a href=https://github.com/MichMich/MagicMirror/tree/developMagicMirror>MagicMirror</a>
 This module loads a YouTube player and a specified playlist and will randomize the videos.
 
 ## Using the module...
