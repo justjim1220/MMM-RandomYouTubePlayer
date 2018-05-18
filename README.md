@@ -1,9 +1,9 @@
-# Module: MMM-RandomYouTubePlayer
+# Module: MMM-RandomYouTubePlayer...
 
 The MMM-RandomYouTubePlayer module is a 3rd party module of the MagicMirror. 
 This module loads a YouTube player and a specified playlist and will randomize the videos.
 
-## Using the module
+## Using the module...
 
 To use this module, add it to the modules array in the 'config/config.js' file:
 ```
@@ -20,7 +20,7 @@ modules: [
 ]
 ```
 
-## Install
+## Install...
 ```
 cd ~/MagicMirror/modules
 git clone https://github.com/justjim1220/MMM-RandomYouTubePlayer.git
@@ -28,7 +28,7 @@ cd MMM-RandomYouTubePlayer
 npm install
 ```
 
-## Optional parameters: (defaults for the player as is. change per your needs...)
+Optional parameters: (defaults for the player as is. change per your needs...)
 
 autoplay: true,
 disablekb: true,
