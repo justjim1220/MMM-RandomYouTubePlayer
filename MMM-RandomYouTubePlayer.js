@@ -21,11 +21,24 @@
 
 Module.register("MMM-RandomYouTubePlayer", {
 	defaults: {
-		playlist_ID: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
-		volume: "100",
-		height: "420",
-		width: "700",
-		loop: "true"
+		playlistId: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
+        	height: 480,
+        	width: 720,
+        	autoplay: true,
+        	disablekb: true,
+        	enablejsapi: true,
+        	color: "red",
+        	fs: false,
+        	setPlaybackRate: 1, 
+        	setVolume: "100%",
+        	cc_load_policy: true,
+        	list: "playlist", 
+        	controls: false,
+        	showinfo: false, 
+        	rel: false, 
+        	modestbranding: true,
+        	iv_load_policy: true,
+        	loop: true,
 	},
 
     getDom: function() {
