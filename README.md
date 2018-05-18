@@ -1,1 +1,77 @@
-# MMM-RandomYouTubePlayer
+# Module: MMM-RandomYouTubePlayer
+
+The `MMM-RandomYouTubePlayer` module is third party modules of the MagicMirror. This module loads a YouTube player and a specified playlist and will randomize the videos.
+
+## Using the module
+
+To use this module, add it to the modules array in the `config/config.js` file:
+
+```javascript
+modules: [
+		{
+config: {
+	playlistId: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
+        height: 480,
+        width: 720,
+        autoplay: true,
+        disablekb: true,
+        enablejsapi: true,
+        color: "red",
+        fs: false,
+        setPlaybackRate: 1, 
+        setVolume: "100%",
+        cc_load_policy: true,
+        list: "playlist", 
+        controls: false,
+        showinfo: false, 
+        rel: false, 
+        modestbranding: true,
+        iv_load_policy: true,
+        loop: true,
+},
+]
+```
+
+## Configuration options
+
+The following properties can be configured:
+
+<table width="100%">
+	<!-- why, markdown... -->
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th width="100%">Description</th>
+		</tr>
+	<thead>
+	<tbody>
+		<tr>
+			<td><code>fileUrl</code></td>
+			<td>File url.<br>
+				<br><b>Possible values:</b> Logo link form internet or path to your local files relative to MagicMirror directory
+				<br><b>Default value:</b> <i>'modules/MMM-SimpleLogo/public/logo.png'</i>
+			</td>
+		</tr>
+		<tr>
+			<td><code>width</code></td>
+			<td>Set width of your logo, height is auto.<br>
+				<br><b>Possible values:</b> <code>'300px'</code> or <code>'50%'</code>
+				<br><b>Default value:</b> <code>'200px'</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>position</code></td>
+			<td>Horizontal position on current container<br>
+				<br><b>Possible values:</b> <code>left</code>, <code>center</code>, or <code>right</code>
+				<br><b>Default value:</b> <code>left</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>refreshInterval</code></td>
+			<td>Refresh/refetch image file between interval. Only use this if your image url return different image after some interval of time, even the <code>fileUrl</code> is not changed. See this case #2, awesome project by @ElYoM <br>
+				<br><b>Possible values:</b> <code>1000</code>, <code>2000</code>, or <code>10000</code>
+				<br><b>Default value:</b> <code>0</code> (disabled)
+			</td>
+		</tr>
+	</tbody>
+</table>
