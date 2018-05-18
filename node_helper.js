@@ -1,8 +1,8 @@
 /* Magic Mirror
  * Node Helper: MMM-RandomYouTubePlayer
  *
- * By 
- * MIT Licensed.
+ * By Jim Hallock aka justjim1220
+ * MIT Licensed for MagicMirror.
  */
 
 var NodeHelper = require("node_helper");
