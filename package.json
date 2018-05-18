@@ -1,9 +1,9 @@
 {
   "name": "MMM-RandomYouTubePlayer",
-  "version": "1.0.0",
-  "description": "Todo: Insert description here!",
+  "version": "1.5.0",
+  "description": "Todo: Screenshots, fix 2 known issues: repeating videos, and max playlist number???",
   "main": "MMM-RandomYouTubePlayer.js",
-  "author": "",
+  "author": "Jim Hallock aka justjim1220 (justjim1220@gmail.com)",
   "license": "MIT",
   "devDependencies": {
     "grunt": "latest",
