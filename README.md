@@ -1,6 +1,6 @@
 # Module: MMM-RandomYouTubePlayer...
 
-The MMM-RandomYouTubePlayer module is a 3rd party module of the MagicMirror. 
+The MMM-RandomYouTubePlayer module is a 3rd party module of the <a href>https://github.com/MichMich/MagicMirror/tree/developMagicMirror>MagicMirror</a>
 This module loads a YouTube player and a specified playlist and will randomize the videos.
 
 ## Using the module...
@@ -28,8 +28,8 @@ cd MMM-RandomYouTubePlayer
 npm install
 ```
 
-Optional parameters: (defaults for the player as is. change per your needs...)
-
+## Optional parameters: (defaults for the player as is. change per your needs...)
+```
 autoplay: true,
 disablekb: true,
 enablejsapi: true,
@@ -42,6 +42,7 @@ showinfo: false,
 rel: false, 
 modestbranding: true,
 loop: true,
+```
 
 ## Configuration Options...
 The following properties NEED to be configured:
@@ -82,9 +83,9 @@ My current playlist has approx. 1600 videos, and it shuffles through them all.
 TWO... Player will shuffle the videos, but you will get repeats. (still working on this)
 
 ## Acknowledgements...
-I used code snippets from the MMM-EmbedYouTube module by Nitipoom Unrrom (aka nitpum)
-And from the MMM-YouTube-API by C4TFLY 
-Thanks to them for giving me the snippets I needed to get started on this module!!!
-And, I added my own snippets to complete the project!
-
-I also want to thank cowboysdude and Mykle for their help as well! You guys are Awesome!!!
+I used code snippets from the MMM-EmbedYouTube module by @nitpum <br>
+And from the MMM-YouTube-API by @C4TFLY <br> 
+Thanks to them for giving me the snippets I needed to get started on this module!!! <br>
+And, I added my own snippets to complete the project! <br>
+<br>
+I also want to thank @cowboysdude and @Mykle for their help as well! You guys are Awesome!!!
