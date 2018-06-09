@@ -1,6 +1,7 @@
-/* MagicMIrror Module - MMM-RandomYouTubePlayer
+/**********************************************************************************
+ * MagicMIrror Module - MMM-RandomYouTubePlayer
  *
- * This is a module for the [MagicMirrorÂ² By Michael Teeuw http://michaelteeuw.nl]
+ * This is a module for the [MagicMirror² By Michael Teeuw http://michaelteeuw.nl]
  * (https://github.com/MichMich/MagicMirror/).
  *
  * this module pulls a specified playlist from YouTube, shuffles the video list,
@@ -8,117 +9,95 @@
  * it starts the player with a random video,
  * then continues to play random videos throughout the list
  *
- * NOT tested with Raspberry Pi or Linux-Based systems.
+ * NOT tested with Raspberry Pi or Linux-Based systems. I'm pretty sure it will
+ * work with all platforme,
  * It DOES work with Windows 10!!!
  *
- * vs. -- 1.4.0
+ * vs. -- 1.5.0
  *
  * By Jim Hallock (justjim1220@gmail.com)
  *
  * Licensed with a crapload of good ole' Southern Sweet Tea 
  * and a lot of Cheyenne Extreme Menthol cigars!!!
- */
+ *********************************************************************************/
+
 
 Module.register("MMM-RandomYouTubePlayer", {
-	defaults: {
-		playlistId: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
-        	height: 480,
-        	width: 720,
-        	autoplay: true,
-        	disablekb: true,
-        	enablejsapi: true,
-        	color: "red",
-        	fs: false,
-        	setPlaybackRate: 1, 
-        	setVolume: "100%",
-        	cc_load_policy: true,
-        	list: "playlist", 
-        	controls: false,
-        	showinfo: false, 
-        	rel: false, 
-        	modestbranding: true,
-        	iv_load_policy: true,
-        	loop: true,
-	},
+    defaults: {
+        listType: "playlist",
+        playlistId: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
+        volume: 50, //percentage of starting sound 0-100
+        height: "420", // specified in pixels (px)
+        width: "700", // specified in pixels (px)
+        autoplay: "true", // to automatically play when player gets loaded
+        loop: "true" // to replay the playlist continuously
+    },
 
-    getDom: function() {
-	var wrapper = document.createElement("div");
+    requires: "youtube-random-video",
 
-	var scriptContainer = document.createElement('script');
+    getDom: function () {
+        var wrapper = document.createElement("div");
 
-	var playlistId = " & + this.config.playlist_ID + ";	
+        var scriptContainer = document.createElement('script');
 
-    function onYouTubeIframeAPIReady() {
-	player = new YT.Player('player', {
-	    height: '480',
-	    width: '720',
-	    events: {
-		'onReady': onPlayerReady,
-		'onStateChange': onPlayerStateChange,
-	    }
-	});
+        // var playlistId = "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW";
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: this.config.height,
+                width: this.config.width,
+                events: {
+                    onReady: "onPlayerReady",
+                    onStateChange: "onPlayerStateChange"
+                }
+            });
+        }
+        var playlistArray;
+        var playListArrayLength;
+        var maxNumber;
+        var oldNumber = 0;
+        var NewNumber = 0;
+
+        function newRandomNumber() {
+            oldNumber = NewNumber;
+            NewNumber = Math.floor(Math.random() * maxNumber);
+            if (NewNumber == oldNumber) {
+                newRandomNumber();
+            } else {
+                return NewNumber;
+            }
+        }
+
+        function onPlayerReady(event) {
+            player.loadPlaylist({
+                listType: this.config.listType,
+                list: this.config.playlistId
+            });
+        }
+
+        var firstLoad = true;
+
+        function onPlayerStateChange(event) {
+            console.log(event.data);
+            if (event.data == YT.PlayerState.ENDED) {
+                player.playVideoAt(newRandomNumber());
+            } else {
+                if (firstLoad && event.data == YT.PlayerState.PLAYING) {
+                    firstLoad = false;
+                    playlistArray = player.getPlaylist();
+                    playListArrayLength = playlistArray.length;
+                    maxNumber = playListArrayLength;
+                    NewNumber = newRandomNumber();
+                    player.playVideoAt(newRandomNumber());
+                }
+            }
+       
+        }
+      return wrapper;
     }
-
-	var playlistArray;
-	var playListArrayLength;
-	var maxNumber;
-	var oldNumber = 0;
-	var NewNumber = 0;
-
-    function newRandomNumber() {
-	oldNumber = NewNumber;
-	NewNumber = Math.floor(Math.random() * maxNumber);
-	if (NewNumber == oldNumber) {
-	    newRandomNumber();
-	} else {
-	    return NewNumber;
-	}
-    }
-
-    function onPlayerReady(event) {
-	player.loadPlaylist({
-	    'listType': 'playlist',
-	    'list': playlistId,
-	});
-    }
-
-	var firstLoad = true;
-
-    function onPlayerStateChange(event) {
-    console.log(event.data);
-	if (event.data == YT.PlayerState.ENDED) {
-	    player.playVideoAt(newRandomNumber());
-	} else {
-	if (firstLoad && event.data == YT.PlayerState.PLAYING) {
-	    firstLoad = false;
-
-	playlistArray = player.getPlaylist();
-	playListArrayLength = playlistArray.length;
-	maxNumber = playListArrayLength;
-	NewNumber = newRandomNumber();
-	player.playVideoAt(newRandomNumber());
-	}
-    }
-
-	wrapper.appendChild(scriptContainer);
-
-	var TempDiv = document.createElement('div');
-	wrapper.appendChild(TempDiv);
-	TempDiv.setAttribute("player");
-
-	var tag = document.createElement('script');
-	wrapper.appendChild(tag);
-	tag.src = "https://www.youtube.com/iframe_api";
-
-	var firstScriptTag = document.getElementsByTagName('script')[0];
-        wrapper.appendChild(firstScriptTag);
-	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-	var player;
-        var done = false;
-
-	wrapper.innerHTML = "<iframe width=\"" + this.config.width +"\" height=\"" + this.config.height + "\" src=\"https://www.youtube.com/embed/" + "listType" + "&list" +  "frameborder=\"0\"></iframe>";
-
-	return wrapper;
-}
 });
