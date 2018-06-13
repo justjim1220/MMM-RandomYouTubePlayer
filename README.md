@@ -8,15 +8,30 @@ This module loads a YouTube player and a specified playlist and will randomize t
 To use this module, add it to the modules array in the 'config/config.js' file:
 ```
 modules: [
-	{
-	module: "MMM-RandomYoutubePlayer", 
-	position: "top_center",	      // This can be any of the regions...
-	config: {
-	    playlistId: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",     // See Configuration Options below...
-            height: 480,
-            width: 720,
-	    }
-	}
+	module: "MMM-RandomYouTubePlayer",
+			header: "Just Jim's Faves...",
+			position: "top_center",
+			config: {
+				listType: "playlist",
+				list: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
+				cc_load_policy: "true",
+				color: "red",
+				controls: "true",
+				disablekb: "0",
+				enablejsapi: "true",
+				fs: "false",
+				iv_load_policy: "1",
+				modestbranding: "true",
+				showinfo: "true",
+				rel: "false",
+				volume: "100",
+				height: "394",
+				width: "700",
+				autoplay: "true",
+				loop: "true"
+			}
+		},
+
 ]
 ```
 
