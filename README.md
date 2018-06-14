@@ -82,5 +82,5 @@ Thanks to them for giving me the snippets I needed to get started on this module
 And, I added my own snippets to complete the project! <br>
 <br>
 I also want to thank @cowboysdude and @Mykle for their help as well! You guys are Awesome!!! <br>
-<br>**And a huge, huge, HUGE THANKS!!!! goes out to @asimhsidd for his collaboration, hints, and pointers!!!
+<br>And a huge, huge, **HUGE THANKS!!!!** goes out to @asimhsidd for his collaboration, hints, and pointers!!!
 <br><i>(Dude, you saved me from some major headaches!!!)</br></i>
