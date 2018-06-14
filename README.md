@@ -14,16 +14,6 @@ modules: [
 			config: {
 				listType: "playlist",
 				list: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
-				cc_load_policy: "true",
-				color: "red",
-				controls: "true",
-				disablekb: "0",
-				enablejsapi: "true",
-				fs: "false",
-				iv_load_policy: "1",
-				modestbranding: "true",
-				showinfo: "true",
-				rel: "false",
 				volume: "100",
 				height: "394",
 				width: "700",
@@ -76,21 +66,21 @@ The following properties NEED to be configured:
 | playlist_ID: " "         | Youtube playlist id to display. You can get it from youtube url <br> **Example:** https://www.youtube.com/playlist?list=PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW <br>**playlist id:** PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW (playlist always starts with PL)
 | width: "394"             | YT player width <br> **size in pixels per your need**
 | height: "700"            | YT player height <br> **size in pixels per your need**
+| volume: "75%"            | Sets the volume at a certain level when starting <br> **1 to 100 %**
+| autoplay: "true"         | Autoplays video when it loaded <br> **true OR false**
+| loop: "true"             | Auto-replays playlist again <br> **true OR false**
 
 ## Optional Configuration Options...
 The following properties CAN be configured:
 
 | Option                   | Description
 | ------------------------ | -------------------------------------------------------------------------------------
-| autoplay: "true"         | Autoplays video when it loaded <br> **true OR false**
-| volume: "75%"            | Sets the volume at a certain level when starting <br> **1 to 100 %**
 | color: "red"             | Player's video progress bar - color can only be "red" or "white <br> **red or white**
 | controls: "true"         | Show youtube video controls bar <br> **true OR false**
 | enablejsapi: "true"      | Enables the player to be controlled via IFrame API calls. <br> **true OR false**
 | disablekb: "0"           | Disables keyboard control <br> **true (1) OR false (0)**
 | iv_load_policy: "1"      | Shows or hides video annotations <br> **1 OR 3**
 | fs: "false"              | Displays the fullscreen button in player <br> **true OR false**
-| loop: "true"             | Auto-replays video again <br> **true OR false**
 | cc_load_policy: "true"   | Displays captions if available for the video playing <br> **true OR false**
 | modestbranding: "false"  | Prevents the Youtube logo from displaying in the controlbar. <br> **true OR false**
 | rel: "false"             | Shows related videos at the end of video <br> **true OR false**
