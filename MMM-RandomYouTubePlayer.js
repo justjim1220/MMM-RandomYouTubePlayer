@@ -46,6 +46,8 @@ Module.register("MMM-RandomYouTubePlayer", {
 		loop: "true" // to replay the playlist continuously
 	},
 
+	requiresVersion: "2.2.0",
+
 	start: function(){
 		self = this;
 		self.loaded = false;
@@ -93,7 +95,7 @@ Module.register("MMM-RandomYouTubePlayer", {
 		return wrapper;
 	},
 	onPlayerReady: function (event) {
-		event.target.setShuffle(shufflePlaylist="true");
+		event.target.setShuffle(true);
 		event.target.playVideo();
 	}
 });
