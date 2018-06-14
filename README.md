@@ -33,30 +33,6 @@ cd MMM-RandomYouTubePlayer
 npm install
 ```
 
-## Optional parameters: (defaults for the player as is. change per your needs...)
-```
-listType: "playlist",
-// playlist ID is found in the URL on YouTube:
-// https://www.youtube.com/playlist?list=PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW
-// whereas "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW" is the 'list' you need to replace below
-list: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
-cc_load_policy: "true", // shows or hides closed captions if available
-color: "red", // shows status bar color on the player, "red" or "white"
-controls: "true", // shows or hides the player controls
-disablekb: "0", // Enables the player to be controlled via IFrame API calls
-enablejsapi: "true", // enables the help and use of the js api
-fs: "false", // enables or disables the fullscreen player
-iv_load_policy: "1", // shows or hides video annotations
-modestbranding: "true", // shows or hides the YouTube logo on the player
-showinfo: "true", // shows or hides the video's information
-rel: "false", // shows or hides related videos at end of video
-volume: "100", // percentage of starting sound 0-100
-height: "394", // specified in pixels (px)
-width: "700", // specified in pixels (px)
-autoplay: "true", // to automatically play when player gets loaded
-loop: "true" // to replay the playlist continuously
-```
-
 ## Configuration Options...
 The following properties NEED to be configured:
 
