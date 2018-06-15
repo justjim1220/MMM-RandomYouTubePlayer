@@ -29,21 +29,24 @@ Module.register("MMM-RandomYouTubePlayer", {
 		// https://www.youtube.com/playlist?list=PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW
 		// whereas "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW" is the 'list' you need to replace below
 		list: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
+		height: "394", // specified in pixels (px)
+		width: "700", // specified in pixels (px)
+		enablejsapi: "true", // Enables the player to be controlled via IFrame API calls
+		volume: "100%", // percentage of starting sound 0-100
+		autoplay: "true", // to automatically play when player gets loaded
+		loop: "true" // to replay the playlist continuously
+		
+		/* other congiurable options
 		cc_load_policy: "true", // shows or hides closed captions if available
 		color: "red", // shows status bar color on the player, "red" or "white"
 		controls: "true", // shows or hides the player controls
 		disablekb: "0", // enables or disables keyboard functions
-		enablejsapi: "true", // Enables the player to be controlled via IFrame API calls
 		fs: "false", // enables or disables the fullscreen player
 		iv_load_policy: "1", // shows or hides video annotations
 		modestbranding: "true", // shows or hides the YouTube logo on the player
 		showinfo: "true", // shows or hides the video's information
 		rel: "false", // shows or hides related videos at end of video
-		volume: "100%", // percentage of starting sound 0-100
-		height: "394", // specified in pixels (px)
-		width: "700", // specified in pixels (px)
-		autoplay: "true", // to automatically play when player gets loaded
-		loop: "true" // to replay the playlist continuously
+		*/
 	},
 
 	requiresVersion: "2.2.0",
@@ -65,16 +68,16 @@ Module.register("MMM-RandomYouTubePlayer", {
 				wrapper.appendChild(playerDiv);
 
 				self.player = new YT.Player("YT_Player", {
-					volume: self.config.volume,
 					height: self.config.height,
 					width: self.config.width,
+					volume: self.config.volume,
 					autoplay: self.config.autoplay,
+					loop: self.config.loop,
 					playerVars:
 					{
-						listType:"playlist",
+						listType: "playlist",
 						list: self.config.list
 					},
-					loop: self.config.loop,
 					events: {
 						onReady: self.onPlayerReady
 					}
@@ -89,13 +92,13 @@ Module.register("MMM-RandomYouTubePlayer", {
 		wrapper.id = self.identifier + "_wrapper";
 		if (!self.loaded) {
 			wrapper.innerHTML = this.translate("MMM-RandomYouTubePlayer is Loading.");
-			wrapper.className = "dimmed light small";
+			wrapper.className = "normal regular small";
 			return wrapper;
 		}
 		return wrapper;
 	},
 	onPlayerReady: function (event) {
-		event.target.setShuffle(true);
+		event.target.setShuffle({"shufflePlaylist" : true});
 		event.target.playVideo();
 	}
 });
