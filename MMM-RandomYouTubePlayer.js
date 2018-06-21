@@ -55,7 +55,7 @@ Module.register("MMM-RandomYouTubePlayer", {
 		self = this;
 		self.loaded = false;
 		var el = document.createElement("script");
-		el.src = "//www.youtube.com/iframe_api";
+		el.src = "https://www.youtube.com/iframe_api";
 		el.onload = function(){
 			self.loaded = true;
 			setTimeout( function(){
@@ -98,7 +98,7 @@ Module.register("MMM-RandomYouTubePlayer", {
 		return wrapper;
 	},
 	onPlayerReady: function (event) {
-		event.target.setShuffle({"shufflePlaylist" : true});
+		event.target.setShuffle(true);
 		event.target.playVideo();
 	}
 });
