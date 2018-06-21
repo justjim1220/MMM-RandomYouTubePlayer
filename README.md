@@ -9,14 +9,14 @@ To use this module, add it to the modules array in the 'config/config.js' file:
 ```
 modules: [
 	{
-	module: "MMM-RandomYoutubePlayer", 
+	module: "MMM-RandomYouTubePlayer", 
 	position: "top_center",	      // This can be any of the regions...
 	config: {
 	    playlistId: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",     // See Configuration Options below...
             height: 480,
             width: 720,
 	    }
-	}
+	},
 ]
 ```
 
