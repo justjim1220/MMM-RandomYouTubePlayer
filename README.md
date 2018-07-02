@@ -71,17 +71,6 @@ The following properties CAN be configured:
 | rel: true             | Shows related videos at the end of video <br> **true OR false**
 | showinfo: true        | Shows video title and uploader <br> **true OR false**
 
-## Screenshots...
-
-On my TODO list...
-
-## Known issues...
-
-ONE... Player will only show a max of 200 videos loaded, but it will shuffle through the full playlist.
-My current playlist has approx. 1600 videos, and it shuffles through them all.
-
-TWO... Player will shuffle the videos, but you will get repeats. (still working on this)
-
 ## Acknowledgements...
 I used code snippets from the MMM-EmbedYouTube module by @nitpum <br>
 And from the MMM-YouTube-API by @C4TFLY <br> 
