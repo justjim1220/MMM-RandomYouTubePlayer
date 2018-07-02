@@ -106,8 +106,8 @@ Module.register("MMM-RandomYouTubePlayer", {
         console.log(event.data);
         var listArray = self.player.getPlaylist();
         var arrayLength = listArray.length;
+        var index = Math.floor(Math.random() * listArray.length);
         event.target.setShuffle(true);
-        var index = Math.floor(Math.random() * arrayLength);
-        event.target.playVideoAt(index);
+        event.target.playVideoAt(0);
     }
 });
