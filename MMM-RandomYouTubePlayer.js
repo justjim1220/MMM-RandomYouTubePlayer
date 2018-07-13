@@ -141,14 +141,15 @@ Module.register("MMM-RandomYouTubePlayer", {
         // whereas "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW" is the 'list' you need to replace below
         list: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
         height: "394", // specified in pixels (px)
-        width: "700", // specified in pixels (px)
-        enablejsapi: "true", // Enables the player to be controlled via IFrame API calls
-        volume: "50%", // percentage of starting sound 0-100
-        autoplay: "true", // to automatically play when player gets loaded
-        rel: "false", // shows or hides related videos at end of video
-        loop: "true" // to replay the playlist continuously
-
+        width: "700" // specified in pixels (px)
+        },
+		
 		/* other congiurable options
+		enablejsapi: "true", // Enables the player to be controlled via IFrame API calls
+		volume: "50%", // percentage of starting sound 0-100
+		autoplay: "true", // to automatically play when player gets loaded
+		rel: "false", // shows or hides related videos at end of video
+		loop: "true" // to replay the playlist continuously
 		cc_load_policy: "true", // shows or hides closed captions if available
 		color: "red", // shows status bar color on the player, "red" or "white"
 		controls: "true", // shows or hides the player controls
@@ -158,7 +159,7 @@ Module.register("MMM-RandomYouTubePlayer", {
 		modestbranding: "true", // shows or hides the YouTube logo on the player
 		showinfo: "true", // shows or hides the video's information
 		*/
-    },
+    
 
     requiresVersion: "2.1.0",
 
@@ -184,12 +185,12 @@ Module.register("MMM-RandomYouTubePlayer", {
                 self.player = new YT.Player("YT_Player", {
                     height: self.config.height,
                     width: self.config.width,
-                    enablejsapi: self.config.enablejsapi,
-                    rel: self.config.rel,
                     playerVars: {
                         listType: "playlist",
                         list: self.config.list,
                         autoplay: self.config.autoplay,
+			enablejsapi: self.config.enablejsapi,
+	                rel: self.config.rel,
                         volume: self.config.volume,
                         loop: self.config.loop,
                     },
@@ -198,7 +199,7 @@ Module.register("MMM-RandomYouTubePlayer", {
                     },
                     
                 });
-            }, 1000);
+            }, 2000);
         };
         document.querySelector("body").appendChild(el);
     },
@@ -223,7 +224,4 @@ Module.register("MMM-RandomYouTubePlayer", {
         event.target.playVideoAt(0);
     }
 });
-et.setShuffle(true);
-        event.target.playVideoAt(0);
-    }
-});
+
