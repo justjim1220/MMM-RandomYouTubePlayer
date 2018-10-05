@@ -1,4 +1,4 @@
-/* MagicMIrror Module - MMM-RandomYouTubePlayer
+﻿/* MagicMIrror Module - MMM-RandomYouTubePlayer
  *
  * This is a module for the [MagicMirror² By Michael Teeuw http://michaelteeuw.nl]
  * (https://github.com/MichMich/MagicMirror/).
@@ -32,25 +32,24 @@ Module.register("MMM-RandomYouTubePlayer", {
         // whereas "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW" is the 'list' you need to replace below
         list: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",
         height: "394", // specified in pixels (px)
-        width: "700" // specified in pixels (px)
-        },
+        width: "700", // specified in pixels (px)
+        showinfo: false,
+        rel: false,
+        fs: true,
+        modestbranding: true,
+		autoplay: true,
+        enablejsapi: true,
+        controls: true,
+        cc_load_policy: true,
+		loop: false
+    },
 		
-		/* other congiurable options
-		enablejsapi: "true", // Enables the player to be controlled via IFrame API calls
-		volume: "50%", // percentage of starting sound 0-100
-		autoplay: "true", // to automatically play when player gets loaded
-		rel: "false", // shows or hides related videos at end of video
-		loop: "true" // to replay the playlist continuously
-		cc_load_policy: "true", // shows or hides closed captions if available
-		color: "red", // shows status bar color on the player, "red" or "white"
-		controls: "true", // shows or hides the player controls
-		disablekb: "0", // enables or disables keyboard functions
-		fs: "false", // enables or disables the fullscreen player
-		iv_load_policy: "1", // shows or hides video annotations
-		modestbranding: "true", // shows or hides the YouTube logo on the player
-		showinfo: "true", // shows or hides the video's information
-		*/
-    
+    /* other congiurable options
+    volume: "50%", // percentage of starting sound 0-100
+    color: "red", // shows status bar color on the player, "red" or "white"
+    disablekb: "0", // enables or disables keyboard functions
+    iv_load_policy: "1", // shows or hides video annotations
+    */
 
     requiresVersion: "2.1.0",
 
@@ -67,7 +66,7 @@ Module.register("MMM-RandomYouTubePlayer", {
             setTimeout(function() {
                 console.log("MMM-RandomYTPlayer: Video wrapper created!!!");
                 var wrapper = document.getElementById(self.identifier + "_wrapper"),
-                    playerDiv = document.createElement("div");
+                playerDiv = document.createElement("div");
                 wrapper.innerHTML = "";
                 wrapper.className = "";
                 playerDiv.id = "YT_Player";
@@ -79,10 +78,14 @@ Module.register("MMM-RandomYouTubePlayer", {
                     playerVars: {
                         listType: "playlist",
                         list: self.config.list,
+                        showinfo: self.config.showinfo,
                         autoplay: self.config.autoplay,
-			enablejsapi: self.config.enablejsapi,
-	                rel: self.config.rel,
-                        volume: self.config.volume,
+                        enablejsapi: self.config.enablejsapi,
+                        modestbranding: self.config.modestbranding,
+                        rel: self.config.rel,
+                        controls: self.config.controls,
+                        fs: self.config.fs,
+                        cc_load_policy: self.config.cc_load_policy,
                         loop: self.config.loop,
                     },
                     events: {
@@ -110,9 +113,8 @@ Module.register("MMM-RandomYouTubePlayer", {
         console.log(event.data);
         var listArray = self.player.getPlaylist();
         var arrayLength = listArray.length;
-        var index = Math.floor(Math.random() * listArray.length);
+        var index = Math.floor(Math.random() * arrayLength);
         event.target.setShuffle(true);
-        event.target.playVideoAt(0);
+        event.target.playVideoAt(index);
     }
 });
-

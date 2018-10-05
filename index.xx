@@ -1,0 +1,34 @@
+var request = require('request');
+function genereazaCuvint(){
+    var text = "";
+    var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 3; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+
+    return text;
+}
+exports.getRandomVid = function (key , callback){
+  var cuvintGen = genereazaCuvint();
+  var url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q='+cuvintGen+'&key=' + key;
+  request(url, function (error, response, body) {
+
+    if (!error && response.statusCode == 200) {
+      var obj = JSON.parse(body);
+      obj = obj.items;
+
+      obj  = obj.filter(function (obj) {
+        return obj.id.kind == 'youtube#video';
+      });
+      var chosen = obj[Math.floor(Math.random() * obj.length)];
+      callback(null ,chosen);
+
+
+    }else  {
+      //if error
+
+      callback(body , null);
+    }
+  })
+}

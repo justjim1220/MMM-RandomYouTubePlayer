@@ -9,14 +9,14 @@ To use this module, add it to the modules array in the 'config/config.js' file:
 ```
 modules: [
 	{
-	module: "MMM-RandomYouTubePlayer", 
+	module: "MMM-RandomYoutubePlayer", 
 	position: "top_center",	      // This can be any of the regions...
 	config: {
 	    playlistId: "PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW",     // See Configuration Options below...
             height: 480,
             width: 720,
 	    }
-	},
+	}
 ]
 ```
 
@@ -71,6 +71,17 @@ The following properties CAN be configured:
 | rel: true             | Shows related videos at the end of video <br> **true OR false**
 | showinfo: true        | Shows video title and uploader <br> **true OR false**
 
+## Screenshots...
+
+On my TODO list...
+
+## Known issues...
+
+ONE... Player will only show a max of 200 videos loaded, but it will shuffle through the full playlist.
+My current playlist has approx. 1600 videos, and it shuffles through them all.
+
+TWO... Player will shuffle the videos, but you will get repeats. (still working on this)
+
 ## Acknowledgements...
 I used code snippets from the MMM-EmbedYouTube module by @nitpum <br>
 And from the MMM-YouTube-API by @C4TFLY <br> 
@@ -78,4 +89,3 @@ Thanks to them for giving me the snippets I needed to get started on this module
 And, I added my own snippets to complete the project! <br>
 <br>
 I also want to thank @cowboysdude and @Mykle for their help as well! You guys are Awesome!!!
-And a HUGE THANKS goes to @asimhsidd for all of his help!!!
