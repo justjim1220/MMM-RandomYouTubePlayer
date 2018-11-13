@@ -49,7 +49,7 @@ The following properties NEED to be configured:
 
 | Config                | Description
 | --------------------- | ---------------------------------------------------------------------
-| playlist_ID: " "      | Youtube playlist id to display. You can get it from youtube url <br> **Example:** https://www.youtube.com/playlist?list=PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW <br>**playlist id:** PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW (playlist always starts with PL)
+| playlistId: " "      | Youtube playlist id to display. You can get it from youtube url <br> **Example:** https://www.youtube.com/playlist?list=PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW <br>**playlistId:** PLl_KM23gznEAZW-INW8ty4QNaHH8JCnNW (playlist always starts with PL)
 | width: 480            | YT player width <br> **size in pixels per your need**
 | height: 700           | YT player height <br> **size in pixels per your need**
 
