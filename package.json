@@ -1,26 +1,30 @@
 {
-  "name": "MMM-RandomYouTubePlayer",
+  "name": "mmm-randomyoutubeplayer",
   "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/justjim1220/MMM-RandomYouTubePlayer.git"
   },
-  "description": "Todo: Screenshots, fix 3 known issues: not starting with a random video, repeating videos, and max playlist number???",
+  "description": "YouTube player module for MagicMirror that plays playlists in random order",
   "main": "MMM-RandomYouTubePlayer.js",
-  "author": "Jim Hallock aka justjim1220 (justjim1220@gmail.com)",
+  "author": "Jim Hallock aka justjim1220 <justjim1220@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justjim1220/MMM-RandomYouTubePlayer/issues"
+  },
+  "homepage": "https://github.com/justjim1220/MMM-RandomYouTubePlayer#readme",
   "devDependencies": {
     "grunt": "latest",
     "grunt-eslint": "latest",
     "grunt-jsonlint": "latest",
-    "grunt-markdownlint": "^1.0.13",
+    "grunt-markdownlint": "latest",
     "grunt-stylelint": "latest",
     "grunt-yamllint": "latest",
     "stylelint-config-standard": "latest",
     "time-grunt": "latest"
   },
   "dependencies": {
-    "postcss-syntax": "^0.10.0",
-    "stylelint": "^9.2.1"
+    "postcss-syntax": "latest",
+    "stylelint": "latest"
   }
 }
