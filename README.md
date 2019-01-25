@@ -16,7 +16,7 @@ modules: [
             height: 480,
             width: 720,
 	    }
-	}
+	},
 ]
 ```
 
