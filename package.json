@@ -24,6 +24,7 @@
     "time-grunt": "latest"
   },
   "dependencies": {
+    "extend": "latest,
     "postcss-syntax": "latest",
     "stylelint": "latest"
   }
