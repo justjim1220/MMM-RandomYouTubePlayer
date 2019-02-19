@@ -25,7 +25,5 @@
   },
   "dependencies": {
     "extend": "latest,
-    "postcss-syntax": "latest",
-    "stylelint": "latest"
   }
 }
