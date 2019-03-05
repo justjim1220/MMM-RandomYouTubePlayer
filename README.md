@@ -24,8 +24,6 @@ modules: [
 ```
 cd ~/MagicMirror/modules
 git clone https://github.com/justjim1220/MMM-RandomYouTubePlayer.git
-cd MMM-RandomYouTubePlayer
-npm install
 ```
 
 ## Optional parameters: (defaults for the player as is. change per your needs...)
